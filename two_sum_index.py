@@ -1,11 +1,12 @@
 x=input("Enter Values: ").split(",")
 x=list(map(int,x))
-y=set(x)
 n=int(input("Enter Target Number: "))
 new=dict()
+count=-1
 
 for i in x:
+    count+=1
     num=n-i
-    if num in y and x.index(num) in new.values():
-        print(new[num],x.index(i))
-    new[i]=x.index(i)
+    if num in new:
+        print(count,",",new.get(num))
+    new[i]=count
